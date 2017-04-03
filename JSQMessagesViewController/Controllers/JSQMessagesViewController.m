@@ -21,6 +21,7 @@
 #import "JSQMessagesCollectionViewFlowLayoutInvalidationContext.h"
 
 #import "JSQMessageData.h"
+#import "JSQMessageAttributedData.h"
 #import "JSQMessageBubbleImageDataSource.h"
 #import "JSQMessageAvatarImageDataSource.h"
 
@@ -517,7 +518,13 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     cell.delegate = collectionView;
 
     if (!isMediaMessage) {
-        cell.textView.text = [messageItem text];
+        if ([messageItem conformsToProtocol:@protocol(JSQMessageAttributedData)]) {
+            id <JSQMessageAttributedData> attributedMessageItem =  (id <JSQMessageAttributedData>) messageItem;
+            cell.textView.attributedText = [attributedMessageItem attributedText];
+        } else {
+            cell.textView.text = [messageItem text];
+        }
+
         NSParameterAssert(cell.textView.text != nil);
 
         id<JSQMessageBubbleImageDataSource> bubbleImageDataSource = [collectionView.dataSource collectionView:collectionView messageBubbleImageDataForItemAtIndexPath:indexPath];

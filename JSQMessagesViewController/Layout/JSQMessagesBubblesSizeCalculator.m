@@ -22,6 +22,7 @@
 #import "JSQMessagesCollectionViewDataSource.h"
 #import "JSQMessagesCollectionViewFlowLayout.h"
 #import "JSQMessageData.h"
+#import "JSQMessageAttributedData.h"
 
 #import "UIImage+JSQMessages.h"
 
@@ -116,10 +117,19 @@
         CGFloat horizontalInsetsTotal = horizontalContainerInsets + horizontalFrameInsets + spacingBetweenAvatarAndBubble;
         CGFloat maximumTextWidth = [self textBubbleWidthForLayout:layout] - avatarSize.width - layout.messageBubbleLeftRightMargin - horizontalInsetsTotal;
 
-        CGRect stringRect = [[messageData text] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
-                                                             options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
-                                                          attributes:@{ NSFontAttributeName : layout.messageBubbleFont }
-                                                             context:nil];
+        CGRect stringRect;
+        if ([messageData conformsToProtocol:@protocol(JSQMessageAttributedData)]) {
+            id <JSQMessageAttributedData> attributedMessageItem =  (id <JSQMessageAttributedData> )messageData;
+            stringRect = [[attributedMessageItem  attributedText] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
+                                                                               options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                                                                               context:nil];
+
+        } else {
+            stringRect = [[messageData text] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
+                                                          options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                                                       attributes:@{ NSFontAttributeName : layout.messageBubbleFont }
+                                                          context:nil];
+        }
 
         CGSize stringSize = CGRectIntegral(stringRect).size;
 
