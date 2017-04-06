@@ -69,6 +69,7 @@
     _placeHolder = nil;
     _placeHolderTextColor = [UIColor lightGrayColor];
     _placeHolderInsets = UIEdgeInsetsMake(5.0, 7.0, 5.0, 7.0);
+    _placeHolderFont = self.font;
 
     [self associateConstraints];
 
@@ -167,6 +168,16 @@
     }
 
     _placeHolderTextColor = placeHolderTextColor;
+    [self setNeedsDisplay];
+}
+
+- (void)setPlaceHolderFont:(UIFont *)placeHolderFont
+{
+    if ([placeHolderFont isEqual:_placeHolderFont]) {
+        return;
+    }
+
+    _placeHolderFont = placeHolderFont;
     [self setNeedsDisplay];
 }
 
@@ -285,7 +296,7 @@
     paragraphStyle.lineBreakMode = NSLineBreakByTruncatingTail;
     paragraphStyle.alignment = self.textAlignment;
 
-    return @{ NSFontAttributeName : self.font,
+    return @{ NSFontAttributeName : self.placeHolderFont,
               NSForegroundColorAttributeName : self.placeHolderTextColor,
               NSParagraphStyleAttributeName : paragraphStyle };
 }
