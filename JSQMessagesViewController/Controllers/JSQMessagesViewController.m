@@ -664,8 +664,8 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     //  however, the actual font and fontcolor in textView do not get changed
     //  in order to preserve link colors, we need to re-assign the font and fontcolor when selectable is NO
     //  see GitHub issues #1675 and #1759
-    selectedCell.textView.textColor = selectedCell.textView.textColor;
-    selectedCell.textView.font = selectedCell.textView.font;
+    //selectedCell.textView.textColor = selectedCell.textView.textColor;
+    //selectedCell.textView.font = selectedCell.textView.font;
 
     return YES;
 }
