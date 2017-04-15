@@ -140,6 +140,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     self.cellBottomLabelHeightConstraint.constant = bottomLabelFont.pointSize;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jsq_handleTapGesture:)];
+    tap.cancelsTouchesInView = NO;
     [self addGestureRecognizer:tap];
     self.tapGestureRecognizer = tap;
 }
