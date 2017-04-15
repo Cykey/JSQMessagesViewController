@@ -518,6 +518,7 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     cell.delegate = collectionView;
 
     cell.textView.enabledTextCheckingTypes = NSTextCheckingAllTypes;
+    cell.textView.delegate = self;
 
     if (!isMediaMessage) {
         if ([messageItem conformsToProtocol:@protocol(JSQMessageAttributedData)]) {
