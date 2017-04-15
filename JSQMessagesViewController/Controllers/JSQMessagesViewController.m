@@ -517,6 +517,8 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     cell.accessibilityIdentifier = [NSString stringWithFormat:@"(%ld, %ld)", (long)indexPath.section, (long)indexPath.row];
     cell.delegate = collectionView;
 
+    cell.textView.enabledTextCheckingTypes = NSTextCheckingAllTypes;
+
     if (!isMediaMessage) {
         if ([messageItem conformsToProtocol:@protocol(JSQMessageAttributedData)]) {
             id <JSQMessageAttributedData> attributedMessageItem =  (id <JSQMessageAttributedData>) messageItem;
@@ -574,8 +576,6 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     else {
         cell.messageBubbleTopLabel.textInsets = UIEdgeInsetsMake(0.0f, bubbleTopLabelInset, 0.0f, 0.0f);
     }
-
-    cell.textView.enabledTextCheckingTypes = NSTextCheckingAllTypes;
 
     cell.backgroundColor = [UIColor clearColor];
     cell.layer.rasterizationScale = [UIScreen mainScreen].scale;
