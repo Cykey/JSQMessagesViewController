@@ -38,6 +38,7 @@
     //self.contentOffset = CGPointZero;
     //self.textContainerInset = UIEdgeInsetsZero;
     //self.textContainer.lineFragmentPadding = 0;
+    self.numberOfLines = 0;
     self.activeLinkAttributes = @{ NSForegroundColorAttributeName : [UIColor whiteColor],
                                  NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle | NSUnderlinePatternSolid) };
 }
