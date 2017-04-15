@@ -573,7 +573,7 @@
             cell.textView.textColor = [UIColor whiteColor];
         }
         
-        cell.textView.linkTextAttributes = @{ NSForegroundColorAttributeName : cell.textView.textColor,
+        cell.textView.activeLinkAttributes = @{ NSForegroundColorAttributeName : cell.textView.textColor,
                                               NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle | NSUnderlinePatternSolid) };
     }
 

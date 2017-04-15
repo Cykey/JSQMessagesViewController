@@ -17,11 +17,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <TTTAttributedLabel/TTTAttributedLabel.h>
 
 /**
  *  `JSQMessagesCellTextView` is a subclass of `UITextView` that is used to display text
  *  in a `JSQMessagesCollectionViewCell`.
  */
-@interface JSQMessagesCellTextView : UITextView
+@interface JSQMessagesCellTextView : TTTAttributedLabel
 
 @end

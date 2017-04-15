@@ -179,9 +179,9 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     self.messageBubbleTopLabel.text = nil;
     self.cellBottomLabel.text = nil;
 
-    self.textView.dataDetectorTypes = UIDataDetectorTypeNone;
+    self.textView.enabledTextCheckingTypes = 0;
     self.textView.text = nil;
-    self.textView.attributedText = nil;
+    //self.textView.attributedText = nil;
 
     self.avatarImageView.image = nil;
     self.avatarImageView.highlightedImage = nil;
@@ -204,8 +204,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
         self.textView.font = customAttributes.messageBubbleFont;
     }
 
-    if (!UIEdgeInsetsEqualToEdgeInsets(self.textView.textContainerInset, customAttributes.textViewTextContainerInsets)) {
-        self.textView.textContainerInset = customAttributes.textViewTextContainerInsets;
+    if (!UIEdgeInsetsEqualToEdgeInsets(self.textView.textInsets, customAttributes.textViewTextContainerInsets)) {
+        self.textView.textInsets = customAttributes.textViewTextContainerInsets;
     }
 
     self.textViewFrameInsets = customAttributes.textViewFrameInsets;
