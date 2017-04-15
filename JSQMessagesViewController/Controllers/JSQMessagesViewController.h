@@ -32,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface JSQMessagesViewController : UIViewController <JSQMessagesCollectionViewDataSource,
                                                          JSQMessagesCollectionViewDelegateFlowLayout,
+                                                         UITextViewDelegate,
                                                          TTTAttributedLabelDelegate>
 
 /**
