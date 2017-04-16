@@ -516,6 +516,7 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     JSQMessagesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.accessibilityIdentifier = [NSString stringWithFormat:@"(%ld, %ld)", (long)indexPath.section, (long)indexPath.row];
     cell.delegate = collectionView;
+    cell.textView.delegate = self;
 
     if (!isMediaMessage) {
         if ([messageItem conformsToProtocol:@protocol(JSQMessageAttributedData)]) {
