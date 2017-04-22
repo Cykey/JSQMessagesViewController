@@ -36,6 +36,13 @@
 
 #import <objc/runtime.h>
 
+@interface JSQMessagesViewController () {
+    // Workaround for https://github.com/jessesquires/JSQMessagesViewController/issues/2010
+    BOOL _canBecomeFirstResponder;
+}
+
+@end
+
 
 // Fixes rdar://26295020
 // See issue #1247 and Peter Steinberger's comment:
@@ -150,6 +157,8 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
 {
     self.view.backgroundColor = [UIColor whiteColor];
 
+    _canBecomeFirstResponder = NO;
+
     self.toolbarHeightConstraint.constant = self.inputToolbar.preferredDefaultHeight;
 
     self.collectionView.dataSource = self;
@@ -256,6 +265,10 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+
+    _canBecomeFirstResponder = YES;
+    [self becomeFirstResponder];
+    [self reloadInputViews];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -788,7 +801,7 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
 
 - (BOOL)canBecomeFirstResponder
 {
-    return YES;
+    return _canBecomeFirstResponder;
 }
 
 #pragma mark - Text view delegate
