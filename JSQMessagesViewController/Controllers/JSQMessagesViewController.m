@@ -280,6 +280,7 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
+    _canBecomeFirstResponder = NO;
 }
 
 #pragma mark - View rotation
