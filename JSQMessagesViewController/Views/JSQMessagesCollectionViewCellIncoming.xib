@@ -107,10 +107,10 @@
                 <constraint firstItem="Md1-I7-2AZ" firstAttribute="centerY" secondItem="btS-p8-B7Z" secondAttribute="centerY" id="LQ0-vF-qkk"/>
                 <constraint firstItem="Md1-I7-2AZ" firstAttribute="leading" secondItem="btS-p8-B7Z" secondAttribute="trailing" constant="6" id="MYP-wd-RXn"/>
                 <constraint firstItem="afj-rd-iNv" firstAttribute="leading" secondItem="4lh-CK-yVn" secondAttribute="leading" id="OnD-mZ-QtR"/>
+                <constraint firstItem="Da1-09-wR4" firstAttribute="top" secondItem="btS-p8-B7Z" secondAttribute="top" id="TJ5-Zx-m9M"/>
                 <constraint firstItem="Ufa-bF-l1Y" firstAttribute="leading" secondItem="4lh-CK-yVn" secondAttribute="leading" id="Z5z-m3-8Ne"/>
                 <constraint firstItem="afj-rd-iNv" firstAttribute="top" secondItem="4lh-CK-yVn" secondAttribute="top" id="ZG9-2M-N52"/>
                 <constraint firstAttribute="trailing" secondItem="Ufa-bF-l1Y" secondAttribute="trailing" id="cWQ-1Q-xOA"/>
-                <constraint firstItem="UPz-5x-c1T" firstAttribute="top" secondItem="Da1-09-wR4" secondAttribute="bottom" id="dDB-B0-c6J"/>
                 <constraint firstItem="Ufa-bF-l1Y" firstAttribute="top" secondItem="afj-rd-iNv" secondAttribute="bottom" id="i9Y-sV-v6b"/>
                 <constraint firstItem="btS-p8-B7Z" firstAttribute="leading" secondItem="Da1-09-wR4" secondAttribute="trailing" constant="2" id="j0I-pm-eex"/>
                 <constraint firstItem="btS-p8-B7Z" firstAttribute="top" secondItem="Ufa-bF-l1Y" secondAttribute="bottom" id="jAu-Dn-7rN"/>
