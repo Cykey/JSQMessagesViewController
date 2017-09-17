@@ -120,6 +120,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic, readonly, nullable) JSQMessagesLabel *cellBottomLabel;
 
 /**
+ * Returns the label that is pinned to the bottom of the avatar.
+ * This label is most commonly used to display message timestamps.
+ */
+@property (weak, nonatomic, readonly, nullable) JSQMessagesLabel *timestampLabel;
+
+/**
  *  Returns the text view of the cell. This text view contains the message body text.
  *
  *  @warning If mediaView returns a non-nil view, then this value will be `nil`.

@@ -61,7 +61,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X89-B1-aAd" userLabel="Avatar container">
-                        <rect key="frame" x="286" y="100" width="34" height="34"/>
+                        <rect key="frame" x="286" y="40" width="34" height="34"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y9b-D9-Q7W" userLabel="Avatar Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
@@ -97,6 +97,16 @@
                             <action selector="didTapAccessoryButton:" destination="23f-xH-rkY" eventType="touchUpInside" id="Hxk-1U-a8W"/>
                         </connections>
                     </button>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timestamp label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WY5-ra-CSE" userLabel="Timestamp label" customClass="JSQMessagesLabel">
+                        <rect key="frame" x="249" y="74" width="107" height="20"/>
+                        <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="L1O-3j-vZl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
@@ -108,6 +118,7 @@
                 <constraint firstItem="jxM-YD-sVG" firstAttribute="top" secondItem="23f-xH-rkY" secondAttribute="top" id="HYT-Tw-whz"/>
                 <constraint firstAttribute="trailing" secondItem="X89-B1-aAd" secondAttribute="trailing" id="KLt-Ix-wDa"/>
                 <constraint firstItem="7Uc-dI-YDD" firstAttribute="top" secondItem="2zh-vR-QJW" secondAttribute="bottom" id="Ngq-ew-t2K"/>
+                <constraint firstItem="WY5-ra-CSE" firstAttribute="centerX" secondItem="X89-B1-aAd" secondAttribute="centerX" id="UEO-tQ-FVq"/>
                 <constraint firstItem="7Uc-dI-YDD" firstAttribute="leading" secondItem="23f-xH-rkY" secondAttribute="leading" id="fiS-g3-X16"/>
                 <constraint firstAttribute="bottom" secondItem="7Uc-dI-YDD" secondAttribute="bottom" id="gXo-9b-b1W"/>
                 <constraint firstAttribute="trailing" secondItem="p52-YN-yLu" secondAttribute="trailing" id="gen-N0-uZj"/>
@@ -117,6 +128,7 @@
                 <constraint firstItem="p52-YN-yLu" firstAttribute="leading" secondItem="23f-xH-rkY" secondAttribute="leading" id="tTj-Mp-0va"/>
                 <constraint firstItem="X89-B1-aAd" firstAttribute="leading" secondItem="2zh-vR-QJW" secondAttribute="trailing" constant="2" id="vMz-Yi-B0w"/>
                 <constraint firstItem="2zh-vR-QJW" firstAttribute="leading" secondItem="BbA-sv-fxi" secondAttribute="trailing" constant="6" id="wHt-Ue-oPX"/>
+                <constraint firstItem="WY5-ra-CSE" firstAttribute="top" secondItem="y9b-D9-Q7W" secondAttribute="bottom" id="wue-Am-7ew"/>
             </constraints>
             <size key="customSize" width="317" height="245"/>
             <connections>
@@ -139,6 +151,7 @@
                 <outlet property="textViewBottomVerticalSpaceConstraint" destination="UbF-Bl-Q7v" id="KHP-49-3u4"/>
                 <outlet property="textViewMarginHorizontalSpaceConstraint" destination="7rI-Nc-AK3" id="ciu-j6-IpH"/>
                 <outlet property="textViewTopVerticalSpaceConstraint" destination="RiG-21-Bqc" id="i3j-z0-feE"/>
+                <outlet property="timestampLabel" destination="WY5-ra-CSE" id="wc6-tg-M1R"/>
             </connections>
             <point key="canvasLocation" x="596" y="176"/>
         </collectionViewCell>
