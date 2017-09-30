@@ -219,7 +219,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @see `automaticallyScrollsToMostRecentMessage`.
  */
-- (void)finishSendingMessageAnimated:(BOOL)animated;
+- (void)finishSendingMessageAnimated:(BOOL)animated clearText:(BOOL)clearText;
 
 /**
  *  Animates the receiving of a new message. See `finishReceivingMessageAnimated:` for more details.
