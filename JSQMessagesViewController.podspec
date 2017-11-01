@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
 	s.summary = 'An elegant messages UI library for iOS.'
 	s.homepage = 'http://jessesquires.github.io/JSQMessagesViewController'
 	s.license = 'MIT'
-	s.platform = :ios, '7.0'
+	s.platform = :ios, '9.0'
 
 	s.author = 'Jesse Squires'
 	s.social_media_url = 'https://twitter.com/jesse_squires'
