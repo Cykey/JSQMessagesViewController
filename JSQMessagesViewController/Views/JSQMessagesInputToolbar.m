@@ -75,6 +75,16 @@ static void * kJSQMessagesInputToolbarKeyValueObservingContext = &kJSQMessagesIn
                                                object:_contentView.textView];
 }
 
+// From https://github.com/jessesquires/JSQMessagesViewController/issues/2179#issuecomment-341315175
+- (void)didMoveToWindow
+{
+    [super didMoveToWindow];
+
+    if (@available(iOS 11.0, *)) {
+        [[self bottomAnchor] constraintLessThanOrEqualToSystemSpacingBelowAnchor:self.window.safeAreaLayoutGuide.bottomAnchor multiplier:1.0].active = YES;
+    }
+}
+
 - (JSQMessagesToolbarContentView *)loadToolbarContentView
 {
     NSArray *nibViews = [[NSBundle bundleForClass:[JSQMessagesInputToolbar class]] loadNibNamed:NSStringFromClass([JSQMessagesToolbarContentView class])
